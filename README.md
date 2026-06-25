@@ -4,6 +4,8 @@ O **MeetingCenter** é um worker de background que automatiza a geração de ata
 
 **Objetivo:** A cada 10 minutos ele consulta a Microsoft Graph API, identifica reuniões do dia que possuem transcrição disponível, gera uma ata estruturada usando Azure OpenAI (GPT-4o), e persiste o resultado no PostgreSQL.
 
+**Aplicação:** Esses dados são consumidos por um dashboard, onde cada usuário tem permissão de listar, consultar e compartilhar o resumo/análise das reuniões as quais ele foi o organizador ou participou.
+
 **Fluxo de funcionamento:**
 
 1. O worker SAQ dispara `batch_call_transcript` a cada 10 minutos via cron.
@@ -14,5 +16,3 @@ O **MeetingCenter** é um worker de background que automatiza a geração de ata
 6. Enriquece os dados com lista de convidados (via evento de calendário) e participantes reais (via `callRecords/participants_v2`).
 7. Envia o transcript enriquecido ao GPT-4o com structured output, que devolve um JSON com `goal` (objetivo da reunião), `topics` (temas tratados) e `tasks` (compromissos assumidos com prazos).
 8. Salva tudo na tabela `portal_reunioes` do PostgreSQL: metadados da reunião, participantes, convidados, ata gerada e transcript bruto.
-
-**Componentes de suporte:** `build_html_summary.py` gera um HTML editável da ata (para envio por e-mail via `sendmail_graph.py`), embora esse envio não esteja chamado no fluxo principal atual — os arquivos existem como utilitários disponíveis. A autenticação com a Graph API usa client credentials (client ID + secret), e com o SharePoint usa certificado PFX + JWT.
