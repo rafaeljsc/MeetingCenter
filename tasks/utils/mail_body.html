@@ -1,0 +1,137 @@
+<html>
+
+<head>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid #28a745;
+        }
+
+        h1 {
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .organizer {
+            color: #28a745;
+            /* verde */
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        strong {
+            font-weight: bold;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+            padding-left: 10px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .objective {
+            background-color: #f0f0f0;
+            color: #333;
+            padding: 10px 15px;
+            border-left: 4px solid #28a745;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+
+        .download {
+            background-color: #fafafa;
+            padding: 10px 15px;
+            border-left: 4px solid #28a745;
+            border-radius: 4px;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #555;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        .footer strong {
+            color: #28a745;
+            /* verde */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Olá, <span class="organizer">__organizer__</span>. __greeting__!</h1>
+
+        <p>Segue abaixo o resumo da reunião realizada:</p>
+
+        <ul>
+            <li><strong>Título:</strong> __call_title__</li>
+            <li><strong>Data:</strong> __date_call_day__</li>
+            <li><strong>Horário:</strong> __date_call_start_hour__ às __date_call_end_hour__</li>
+            <li><strong>Duração:</strong> __call_duration__</li>
+            <li><strong>Empresas:</strong> __companies__</li>
+            <li><strong>Convidados:</strong> __invites__</li>
+            <li><strong>Participantes:</strong> __participants__</li>
+        </ul>
+
+        <div class="objective">
+            <strong>Objetivo principal da reunião</strong>: __objetivo__
+        </div>
+
+        <p>O documento inclui os objetivos discutidos, participantes, temas abordados e os compromissos assumidos
+            durante a reunião.</p>
+
+        <div class="download">
+            O anexo pode ser baixado, aberto no navegador e editado conforme necessário. Oculte as colunas de remoção e
+            salve como PDF com <strong>Ctrl + P</strong>.
+        </div>
+
+        <div class="footer">
+            <p>
+                <i>Atenciosamente,</i><br><br>
+            <table cellpadding="0" cellspacing="0" border="0" style="width:100%; max-width:623px;">
+                <tr>
+
+                    <td style="padding-left:10px; vertical-align:top;">
+                        <img src="https://imgur.com/krKgRf3.png" style="width:212px; height:71px; display:block;">
+                        <div style="margin-top:5px; font-family:Verdana, sans-serif;">
+                            <div style="font-size:10.5pt; color:#505050; font-weight:bold;">Lis</div>
+                            <div
+                                style="font-size:6.5pt; color:#505050; text-transform:uppercase; letter-spacing:0.75pt;">
+                                Gerador de atas
+                            </div>
+                            <div style="margin-top:3px; font-size:9pt; color:#CED5E6;">
+                            </div>
+                    </td>
+                </tr>
+            </table>
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
